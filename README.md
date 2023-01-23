@@ -1,2 +1,2 @@
-# maskinorienterad-programmering
-maskinorienterad programmering dat390
+# maskinorienterad programmering
+dat390 labs
