@@ -29,7 +29,8 @@ void startup(void)
 
 void init_app(void)
 {
-    *GPIO_E_MODER = 0x55555555;	// port E output *GPIO_E_PUPDR = 0x55550000;	// input bits pull-up
+    *GPIO_E_MODER = 0x55555555;	// port E output 
+	*GPIO_E_PUPDR = 0x55550000;	// input bits pull-up
 }
 
 // from slides
