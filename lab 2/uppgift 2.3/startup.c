@@ -29,6 +29,11 @@ void startup(void)
 
 void init_app(void)
 {
+   	// copied from lab page, is it even necessary
+    *((unsigned long *) 0x40023830) = 0x18;
+
+   	// copied from lab page, medium speed???
+    *((volatile unsigned int *) 0x40020C08) = 0x55555555;
     *GPIO_E_MODER = 0x55555555;	// port E output 
 	*GPIO_E_PUPDR = 0x55550000;	// input bits pull-up
 }
