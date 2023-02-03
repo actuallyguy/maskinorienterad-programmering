@@ -96,7 +96,6 @@ void init_app(void)
    	// not sure if we need this?
     /*starta klockor port D och E */
     *((unsigned long *) 0x40023830) = 0x18;
-    __asm(" BL =0x08000209\n");
 }
 
 typedef struct
