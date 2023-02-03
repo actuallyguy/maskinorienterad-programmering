@@ -335,12 +335,12 @@ int pixel_overlap(POBJECT o1, POBJECT o2)
 
 void init_app(void)
 {
-    /*starta klockor port D och E */
+    /* starta klockor port D och E */
     *((unsigned long *) 0x40023830) = 0x18;
-    __asm(" BL =0x08000209\n");
 
     *GPIO_MODER = 0x55005555;
-   	// pull down inputs *GPIO_PUPDR = 0x00AA0000;
+   	// pull down inputs 
+    *GPIO_PUPDR = 0x00AA0000;
 }
 
 static OBJECT ball_object = { &ball_geometry,
@@ -367,24 +367,19 @@ void kbdActivate(unsigned int row)
     switch (row)
     {
         case 1:
-            *
-            GPIO_ODR_HIGH = 0x10;
+            *GPIO_ODR_HIGH = 0x10;
             break;
         case 2:
-            *
-            GPIO_ODR_HIGH = 0x20;
+            *GPIO_ODR_HIGH = 0x20;
             break;
         case 3:
-            *
-            GPIO_ODR_HIGH = 0x40;
+            *GPIO_ODR_HIGH = 0x40;
             break;
         case 4:
-            *
-            GPIO_ODR_HIGH = 0x80;
+            *GPIO_ODR_HIGH = 0x80;
             break;
         case 0:
-            *
-            GPIO_ODR_HIGH = 0x00;
+            *GPIO_ODR_HIGH = 0x00;
             break;
     }
 }
