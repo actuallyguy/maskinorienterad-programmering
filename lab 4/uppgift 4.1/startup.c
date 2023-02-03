@@ -51,6 +51,15 @@ void systick_irq_handler(void)
 
 void init_app(void)
 {
+	
+	// copy paste lab page
+	/* starta klockor port D och E */
+	* ( (unsigned long *) 0x40023830) = 0x18;
+	/* starta klockor för SYSCFG */
+	* ((unsigned long *)0x40023844) |= 0x4000; 	
+	/* Relokera vektortabellen */
+	* ((unsigned long *)0xE000ED08) = 0x2001C000;
+	
 	// port d output 
     *GPIO_MODER = 0x55555555;
 	*GPIO_OTYPER = 0x00000000;
